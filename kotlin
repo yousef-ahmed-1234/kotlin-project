@@ -1,0 +1,45 @@
+data class order(val dish: String, var quantity: Int, var isReady: Boolean)
+
+class kitchen {
+
+val orders = mutableListof<order>()
+
+fun completeorders() {
+
+for (order in orders) {
+
+println(" {$order.dish}, {$order.quantity}, {$order.isReady} ")
+
+}
+
+var x = 0
+
+while ( x < orders.size) {
+
+orders[x].isReady = true
+
+x++
+
+}
+
+when (orders.size){
+
+0 -> println("none")
+
+else -> println("orders need to be done")
+
+}
+
+}
+
+}
+
+}
+
+fun main() {
+
+val kitchen = kitchen()
+
+kitchen.completeorders()
+
+}
